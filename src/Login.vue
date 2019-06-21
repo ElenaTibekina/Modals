@@ -29,7 +29,7 @@
         </div>
         <!-- button -->
         <button class="btn btnPrimary">Login</button>
-        <span class="link">Need an account?</span>
+        <span class="link" @click="$emit('changeModal'), resetForm">Need an account?</span>
       </form>
     </div>
   </modal>
@@ -60,6 +60,7 @@ export default {
     resetForm () {
       this.email = ''
       this.password = ''
+      this.$v.$reset()
       this.$emit('close')
     },
     onSubmit () {

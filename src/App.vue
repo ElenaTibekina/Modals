@@ -14,11 +14,11 @@
               </li>
               <li class="navbar-item">
                 <span class="navbar-link" @click="registration = !registration">Registration</span>
-                <registration v-show="registration" @close="registration = false"/>
+                <registration v-show="registration" @close="registration = false" @changeModal="registration  = false, login = true"/>
               </li>
               <li class="navbar-item">
                 <span class="navbar-link" @click="login = !login">Login</span>
-                <login v-show="login" @close="login = false"/>
+                <login v-show="login" @close="login = false" @changeModal="login = false, registration = true"/>
               </li>
             </ul>
           </div>
@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import registration from '@/pages/Registration.vue'
-import login from '@/pages/Login.vue'
+import registration from '@/Registration.vue'
+import login from '@/Login.vue'
 export default {
   components: { registration, login },
   data () {
