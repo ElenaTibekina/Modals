@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import registration from '@/Registration.vue'
-import login from '@/Login.vue'
+import registration from '@/components/auth/Registration.vue'
+import login from '@/components/auth/Login.vue'
 export default {
   components: { registration, login },
   data () {
